@@ -19,6 +19,8 @@ const createFolder = async () => {
   }
 }
 
+// ================== UPLOAD FILE ====================
+
 const uploadFile = async () => {
   try {
     const fileInput = document.createElement('input')
@@ -40,6 +42,8 @@ const uploadFile = async () => {
     alert('Failed to upload file')
   }
 }
+
+// ================== UPLOAD FOLDER ====================
 
 const uploadFolder = async () => {
   try {

@@ -120,7 +120,6 @@ async function getAllFilesAndFolders() {
   return fileSystem;
 }
 
-// New endpoint to get all files and folders
 app.get("/api/files-and-folders", async (req, res) => {
   try {
     const fileSystem = await getAllFilesAndFolders();
@@ -140,11 +139,9 @@ app.delete("/api/delete-item", async (req, res) => {
       return res.status(400).json({ error: "Item path is required" });
     }
 
-    // Normalize the path to remove any leading or trailing slashes
     const normalizedPath = path.replace(/^\/+|\/+$/g, "");
     console.log("Normalized path:", normalizedPath);
 
-    // Check if the path exists
     const [files] = await bucket.getFiles({ prefix: normalizedPath });
     console.log("Files found:", files.length);
 
@@ -217,7 +214,6 @@ app.get("/api/search", async (req, res) => {
       name: file.name,
       type: file.name.endsWith("/") ? "folder" : "file",
       path: file.name,
-      // Add more metadata as needed
     }));
 
     res.json(formattedResults);
