@@ -3,7 +3,6 @@ const multer = require("multer");
 const { Storage } = require("@google-cloud/storage");
 const path = require("path");
 const cors = require("cors");
-require("dotenv").config();
 
 const app = express();
 const upload = multer({ memory: true });
@@ -11,7 +10,8 @@ app.use(cors());
 
 // Initialize Google Cloud Storage
 const storage = new Storage({
-  credentials: JSON.parse(process.env.GOOGLE_APPLICATION_CREDENTIALS),
+  keyFilename: "uploadKey.json",
+  projectId: "serious-mini-project",
 });
 
 const bucketName = "serious-mini-project";

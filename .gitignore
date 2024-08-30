@@ -7,6 +7,7 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 uploadKey.json
+google-api-credentials.json
 
 node_modules
 .DS_Store
@@ -15,6 +16,7 @@ dist-ssr
 coverage
 *.local
 *.env
+
 
 /cypress/videos/
 /cypress/screenshots/
@@ -30,3 +32,4 @@ coverage
 *.sw?
 
 *.tsbuildinfo
+
